@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>포레스트 코지 크립 - Nuage</title>
+  <meta name="description" content="안전하고 포근한 원목 아기 침대, 포레스트 코지 크립" />
+</head>
+<body>
+  <header id="header">
+    <div class="container nav-container">
+      <a href="/" class="logo">Nuage.</a>
+      <div class="nav-right" style="display: flex; align-items: center; gap: 3rem;">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#collections">Collections</a></li>
+        </ul>
+        <div class="cart-icon" id="cartToggle" style="cursor: pointer; position: relative;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 120px;">
+    <div class="container product-detail-grid">
+      <div class="product-gallery fade-up">
+        <div class="main-image">
+          <img src="/crib_premium_1775742557844.png" alt="포레스트 코지 크립" id="mainProdImage"/>
+        </div>
+      </div>
+
+      <div class="product-info-panel fade-up delay-100">
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/#collections">침대</a> / 포레스트 코지 크립</div>
+        <h1 class="pdp-title">포레스트 코지 크립</h1>
+        <div class="pdp-price">₩ 890,000</div>
+        <p class="pdp-desc">
+          청정 자연에서 온 최고급 원목 트리를 가공하여 만든 프리미엄 아기 침대입니다. <br/>
+          부드러운 곡선 마감과 무독성 친환경 페인트로 우리 아이의 첫 휴식 공간을 완벽하게 지켜줍니다.
+        </p>
+
+        <div class="pdp-options">
+          <div class="option-group">
+            <label>소재</label>
+            <div>유럽산 너도밤나무 (Beech Wood)</div>
+          </div>
+          <div class="option-group">
+            <label>사용 연령</label>
+            <div>신생아 ~ 3세 (최대 하중 30kg)</div>
+          </div>
+        </div>
+
+        <div class="purchase-actions">
+          <div class="quantity-selector">
+            <button id="qtyMinus">-</button>
+            <input type="number" id="qtyInput" value="1" min="1" max="10" readonly />
+            <button id="qtyPlus">+</button>
+          </div>
+          <button class="btn btn-full add-to-cart-large" data-id="1" data-name="포레스트 코지 크립" data-price="890000" data-img="/crib_premium_1775742557844.png">
+            장바구니 담기
+          </button>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-title">배송 및 조립 정보 <span>+</span></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-title">교환 / 반품 안내 <span>+</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>장바구니</h3>
+      <button id="closeCart" class="close-cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>합계:</span>
+        <span id="cartTotalPrice">₩ 0</span>
+      </div>
+      <button class="btn btn-full">주문하기</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
