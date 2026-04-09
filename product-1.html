@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>코지 서랍장 - Nuage</title>
+  <meta name="description" content="유럽산 자작나무 합판으로 제작된 아동용 3단 서랍장, 코지 서랍장" />
+</head>
+<body>
+  <header id="header">
+    <div class="container nav-container">
+      <a href="/" class="logo">Nuage.</a>
+      <div class="nav-right" style="display: flex; align-items: center; gap: 3rem;">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#collections">Collections</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="cart-icon" id="cartToggle" style="cursor: pointer; position: relative;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 120px;">
+    <div class="container product-detail-grid">
+      <div class="product-gallery fade-up">
+        <div class="main-image">
+          <img src="/baby_drawer_organizer_1775743106219.png" alt="코지 서랍장" id="mainProdImage"/>
+        </div>
+      </div>
+
+      <div class="product-info-panel fade-up delay-100">
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/#collections">수납</a> / 코지 서랍장</div>
+        <h1 class="pdp-title">코지 서랍장</h1>
+        <div class="pdp-price">₩ 420,000</div>
+        <p class="pdp-desc">유럽산 자작나무 합판으로 제작된 아동용 3단 서랍장입니다. 부드러운 라운드 엣지와 소프트 클로징 레일로 아이의 안전을 지켜줍니다. 깔끔한 디자인으로 어떤 인테리어에도 잘 어울립니다.</p>
+
+        <div class="pdp-options">
+          <div class="option-group">
+            <label>소재</label>
+            <div>유럽산 자작나무 합판</div>
+          </div>
+          <div class="option-group">
+            <label>사용 연령</label>
+            <div>3세 ~ 12세</div>
+          </div>
+          <div class="option-group">
+            <label>크기</label>
+            <div>W600 × D400 × H900 mm</div>
+          </div>
+          <div class="option-group">
+            <label>무게</label>
+            <div>22kg</div>
+          </div>
+        </div>
+
+        <div class="purchase-actions">
+          <div class="quantity-selector">
+            <button id="qtyMinus">-</button>
+            <input type="number" id="qtyInput" value="1" min="1" max="10" readonly />
+            <button id="qtyPlus">+</button>
+          </div>
+          <button class="btn btn-full add-to-cart-large" data-id="1" data-name="코지 서랍장" data-price="420000" data-img="/baby_drawer_organizer_1775743106219.png">
+            장바구니 담기
+          </button>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-title">배송 및 조립 정보 <span>+</span></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-title">교환 / 반품 안내 <span>+</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>장바구니</h3>
+      <button id="closeCart" class="close-cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>합계:</span>
+        <span id="cartTotalPrice">₩ 0</span>
+      </div>
+      <button class="btn btn-full">주문하기</button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Quick View Modal -->
+  <div class="quick-view-modal" id="quickViewModal"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+    <ul class="mobile-menu-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#collections">Collections</a></li>
+    </ul>
+  </nav>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <button class="back-to-top" id="backToTop" aria-label="맨 위로">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"></path></svg>
+  </button>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

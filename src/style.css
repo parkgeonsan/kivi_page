@@ -891,3 +891,32 @@ footer {
   .about-grid { grid-template-columns: 1fr; }
   .about-image { height: 300px; }
 }
+
+/* --- Option Select Buttons (product-5 bookshelf) --- */
+.option-select-group {
+  display: flex; gap: 0.8rem; margin-top: 0.5rem;
+}
+.option-select-btn {
+  padding: 0.7rem 1.5rem;
+  border: 1px solid rgba(74, 66, 56, 0.2);
+  border-radius: 50px;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+.option-select-btn:hover {
+  border-color: var(--accent-color);
+}
+.option-select-btn.active {
+  background: var(--text-primary);
+  color: var(--white);
+  border-color: var(--text-primary);
+}
+
+/* --- Delay Utilities --- */
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }

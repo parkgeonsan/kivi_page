@@ -371,7 +371,7 @@ function openQuickView(data) {
   if (qvTitle) qvTitle.textContent = data.name;
   if (qvPrice) qvPrice.textContent = '₩ ' + parseInt(data.price).toLocaleString();
   if (qvDesc) qvDesc.textContent = data.desc;
-  if (qvDetail) qvDetail.href = '/product.html';
+  if (qvDetail) qvDetail.href = data.slug ? '/' + data.slug + '.html' : '/product-1.html';
   if (qvOverlay) qvOverlay.classList.add('active');
   if (qvModal) qvModal.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -393,6 +393,7 @@ document.querySelectorAll('.quick-view-btn').forEach(btn => {
       price: btn.dataset.price,
       img: btn.dataset.img,
       desc: btn.dataset.desc,
+      slug: btn.dataset.slug,
     });
   });
 });
@@ -589,4 +590,25 @@ if (mainProdImage) {
       lens.style.backgroundPosition = `${xPct}% ${yPct}%`;
     });
   }
+}
+
+// --- Product Option Selector (e.g. 책장 2단/3단) ---
+const optionBtns = document.querySelectorAll('.option-select-btn');
+if (optionBtns.length > 0) {
+  optionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      optionBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const newPrice = parseInt(btn.dataset.price);
+      const label = btn.dataset.label || '';
+      const priceEl = document.querySelector('.pdp-price');
+      if (priceEl) priceEl.textContent = '₩ ' + newPrice.toLocaleString();
+      const cartBtn = document.querySelector('.add-to-cart-large');
+      if (cartBtn) {
+        cartBtn.dataset.price = newPrice;
+        const baseName = cartBtn.dataset.name.replace(/\s*\(.*\)/, '');
+        cartBtn.dataset.name = baseName + (label ? ' (' + label + ')' : '');
+      }
+    });
+  });
 }
